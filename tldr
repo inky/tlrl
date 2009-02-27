@@ -28,7 +28,9 @@ def read_cfg():
         print "Empty configuration file created at", cfgfile
 
 def tldr(credentials, url=None):
-    # TODO check for blank username/password
+    if not credentials['username']:
+        sys.stderr.write('Username is blank in %s\n' % cfgfile)
+        return
     if url and not valid_url(url):
         sys.stderr.write('URL is invalid.\n')
         return
