@@ -10,13 +10,18 @@ Usage
 
 The first time you run `tlrl`, a sample config file will be created in
 your home folder. Open it in your editor of choice and fill in your
-username and password for Instapaper.
+Instapaper credentials.
 
     $ ./tlrl
     Empty configuration file created at $HOME/.tlrl
 
+    $ cat ~/.tlrl
+    [Instapaper]
+    username =
+    password =
+
 Once you've done this, you can verify your username and password with
-the `-a` or `--auth` option.
+the `-a` (or `--auth`) option.
 
     $ ./tlrl -a
     Username and password are correct!
