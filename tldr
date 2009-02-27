@@ -72,9 +72,7 @@ def main():
     op = optparse.OptionParser(usage='usage: %prog URL')
     op.add_option('-a', '--auth', action='store_true', default=False,
                   help='verify your username and password')
-    op.set_description('Add URL to Instapaper. The first time this program is run, '\
-                       'a new config file is saved in your home folder, with blank '\
-                       'entries for your username and password.')
+    op.set_description('Read URL later.')
     opts, args = op.parse_args()
     if opts.auth:
         print_result(tldr(cred))
