@@ -3,6 +3,8 @@ tldr (too long; didn't read)
 
 [Instapaper](http://www.instapaper.com/)'s _Read Later_ for terminal junkies.
 
+Requires Python 2.5 or greater.
+
 Usage
 -----
 
