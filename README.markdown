@@ -1,4 +1,4 @@
-tldr (too long; didn't read)
+tlrl (too long; read later)
 ====
 
 [Instapaper](http://www.instapaper.com/)'s _Read Later_ for terminal junkies.
@@ -8,20 +8,20 @@ Requires Python 2.5 or greater.
 Usage
 -----
 
-The first time you run `tldr`, a sample config file will be created in
+The first time you run `tlrl`, a sample config file will be created in
 your home folder. Open it in your editor of choice and fill in your
 username and password for Instapaper.
 
-    $ ./tldr
-    Empty configuration file created at $HOME/.tldr
+    $ ./tlrl
+    Empty configuration file created at $HOME/.tlrl
 
 Once you've done this, you can verify your username and password with
 the `-a` or `--auth` option.
 
-    $ ./tldr -a
+    $ ./tlrl -a
     Username and password are correct!
 
-To add a URL to your reading list, simply run `tldr URL`:
+To add a URL to your reading list, simply run `tlrl URL`:
 
-    $ ./tldr http://filer.case.edu/dts8/thelastq.htm
+    $ ./tlrl http://filer.case.edu/dts8/thelastq.htm
     URL added!
