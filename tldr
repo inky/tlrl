@@ -19,7 +19,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 from __future__ import with_statement
 import httplib, urllib, ConfigParser, optparse, os, re, sys
-
 host, api = 'www.instapaper.com', '/api'
 cfgfile = os.path.expanduser('~/.tldr')
 cfgsect = 'Instapaper'
@@ -30,7 +29,6 @@ status = {
     403: ('Invalid username or password.', 0),
     500: ('The service encountered an error. Please try again later.', 0),
 }
-
 def read_cfg():
     cfg = ConfigParser.RawConfigParser()
     if os.path.isfile(cfgfile):
@@ -44,7 +42,6 @@ def read_cfg():
         with open(cfgfile, 'w') as f:
             cfg.write(f)
         print "Empty configuration file created at", cfgfile
-
 def tldr(credentials, url=None):
     if not credentials['username']:
         sys.stderr.write('Username is blank in %s\n' % cfgfile)
@@ -61,7 +58,6 @@ def tldr(credentials, url=None):
         params.extend([('url', url), ('auto-title', 1)])
     conn.request('GET', '?'.join((api_uri, urllib.urlencode(params))))
     return conn.getresponse().status
-
 def print_result(code):
     if not code or code not in status:
         return
@@ -69,12 +65,10 @@ def print_result(code):
         print status[code][0]
     else:
         sys.stderr.write(status[code][0] + '\n')
-
 def main():
     cred = read_cfg()
     if not cred:
         return
-
     op = optparse.OptionParser(usage='usage: %prog URL')
     op.add_option('-a', '--auth', action='store_true', default=False,
                   help='verify your username and password')
@@ -90,6 +84,5 @@ def main():
         sys.stderr.write('One URL at a time, please!\n')
     else:
         print_result(tldr(cred, args[0]))
-
 if __name__ == '__main__':
     main()
